@@ -3,7 +3,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="co.oriens.bluelight.AlarmFullScreenActivity"
-    android:background="@color/cyanA200">
+    android:background="@color/cyanA200"
+
+    android:padding="0dp"
+    android:clipToPadding="false">
 
     //INTRO text
     <TextView
@@ -30,5 +33,7 @@
         android:layout_centerHorizontal="true"
         android:padding="@dimen/text_view_padding"
         android:background="@color/colorAccent"
-        android:textColor="@color/white"/>
+        android:textColor="@color/white"
+
+        android:elevation="@dimen/button_elevation"/>
 </RelativeLayout>

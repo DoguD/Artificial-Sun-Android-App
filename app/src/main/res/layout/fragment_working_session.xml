@@ -4,11 +4,12 @@
     android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/backgroundOrange"
+    android:background="@color/white"
     android:paddingBottom="80dp"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:clipToPadding="false"
     tools:context="layout.WorkingSessionFragment">
 
     //Intro Text
@@ -17,15 +18,18 @@
         android:id="@+id/textViewWorkingSession"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:background="@android:drawable/dialog_holo_light_frame"
+
+        android:background="@color/colorAccent"
+        android:elevation="@dimen/intro_box_elevation"
         android:padding="@dimen/text_view_padding"
+        android:layout_margin="16dp"
+
         android:text="@string/work_intro"
         android:textAlignment="center"
-        android:textColor="@color/black_overlay"
-        android:textSize="14sp" />
+        android:textColor="@color/white"
+
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true" />
 
     //Start Button
 
@@ -33,14 +37,17 @@
         android:id="@+id/startWorkingButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+
         android:background="@color/colorAccent"
         android:padding="@dimen/text_view_padding"
-        android:scaleType="centerInside"
+        android:layout_margin="16dp"
+        android:elevation="@dimen/button_elevation"
+
         android:text="@string/work_button"
         android:textColor="@color/white"
-        android:textSize="16sp"
+        android:textSize="24sp"
+
         android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_centerHorizontal="true"/>
 
 </RelativeLayout>

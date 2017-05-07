@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#ef6c00</color>
+    <color name="colorPrimary">#ff9800</color>
     <color name="colorPrimaryDark">#b53d00</color>
     <color name="colorPrimaryLight">#ff9d3f</color>
 
-    <color name="colorAccent">#d81b60</color>
+    <color name="colorAccent">#e91e63</color>
 
     <!--Shades of blue-->
     <color name="cyan200">#80deea</color>

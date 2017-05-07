@@ -33,9 +33,10 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="52dp"
         android:background="#00000000"
-        android:elevation="24dp"
         android:scaleType="centerInside"
         android:visibility="invisible"
-        app:srcCompat="@drawable/pause_button" />
+        app:srcCompat="@drawable/pause_button"
+
+        android:elevation="@dimen/button_elevation"/>
 
 </RelativeLayout>
