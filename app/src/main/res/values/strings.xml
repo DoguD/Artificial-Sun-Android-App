@@ -1,0 +1,75 @@
+<resources>
+    <string name="app_name">Artificial Sun</string>
+
+    <!--INTRO SLIDE-->
+    <string name="next">NEXT</string>
+    <string name="skip">SKIP</string>
+    <string name="welcome_slide_end">GOT IT</string>
+
+    <string name="slide_1_title">Wake Up Better</string>
+    <string name="slide_1_desc">We know it is not easy to wake up early but Artificial Sun can help you.</string>
+
+    <string name="slide_2_title">Biological Machines</string>
+    <string name="slide_2_desc">We are all biological machines. However, we can trick our clocks.</string>
+
+    <string name="slide_3_title">Blue Light</string>
+    <string name="slide_3_desc">When we are exposed to blue light, our body thinks that sun has rised, so we are forced to wake up.</string>
+
+    <string name="slide_4_title">FEEL MORE ENERGIZED!</string>
+    <string name="slide_4_desc">Use the app for one minute each morning, and you will feel more energized throughout the day.</string>
+
+    <!--Essentials-->
+    <!--
+    <string name="section_format" translatable="false">Hello World from section: %1$d</string>
+    -->
+    <string name="title_activity_tab">Artificial Sun</string>
+    <string name="title_activity_full_screen_wake_up">Artificial Sun</string>
+    <string name="title_activity_alarm_full_screen">Artificial Sun</string>
+    <string name="action_settings">Settings</string>
+
+    <!--WAKE UP Fragment-->
+    <string name="wake_up_intro">When your body is exposed to Blue Light, it will think that sun has risen. So you will automatically feel more energized.
+    \nEventhough they are easy, solving simple equations will wake your brain up.
+    \nStart the 1 minute session and wake up easily.</string>
+    <string name="wake_up_button">WAKE UP</string>
+
+    <!--Working Session Fragment-->
+    <string name="work_intro">Did you know that morning is the best time for a productive working session.
+    \nPut your phone near you so that its screen faces you and start a 25 minute working session.</string>
+    <string name="work_button">START WORKING</string>
+
+    <!--Set Alarm Fragment-->
+    <string name="set_alarm_intro">If you feel lazy to start Artificial Sun every morning, SET AN ALARM!
+    \nYou will easily start your morning session after our alarm wakes you up.</string>
+    <string name="set_alarm_button">Set Alarm</string>
+
+    <!--Full Screen Alarm-->
+    <string name="full_screen_alarm_intro">WAKE UP
+        \nAND
+        \nFEEL ENERGIZED!</string>
+    <string name="full_screen_alarm_start_session_button">START WAKING UP SESSION</string>
+    <string name="alarm_notification">Wake Up Time!</string>
+
+    <!--Wake Up Session-->
+    <string name="wake_up_session_finished">YOU ARE NOW ENERGIZED</string>
+    <string name="wake_up_session_countdown">seconds left.</string>
+
+    <!--Work Session-->
+    <string name="work_session_finished">CONGRATULATIONS!
+    \nYou have completed 25 minutes of productive work.</string>
+    <string name="work_session_countdown_minutes">minutes</string>
+    <string name="work_session_countdown_seconds">seconds left.</string>
+
+    <!--Main Tab Activity-->
+    <string name="title_wake_up">WAKE UP</string>
+    <string name="title_work">WORKING SESSION</string>
+    <string name="title_set_alarm">SET ALARM</string>
+    <string name="start">GOT IT</string>
+    <string name="is_alarm_set">Alarm Is Not Set!</string>
+    <string name="alarm_is_set_to">"Alarm Is Set To: "</string>
+    <string name="alarm_is_set_to_2">.</string>
+    <string name="cancel_alarm">Cancel ALarm</string>
+    <string name="work_title">Time To Work</string>
+    <string name="wake_up_title">Time To Wake Up</string>
+
+</resources>

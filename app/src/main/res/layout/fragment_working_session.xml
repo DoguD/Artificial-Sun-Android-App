@@ -1,0 +1,46 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundOrange"
+    android:paddingBottom="80dp"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="layout.WorkingSessionFragment">
+
+    //Intro Text
+
+    <TextView
+        android:id="@+id/textViewWorkingSession"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:padding="@dimen/text_view_padding"
+        android:text="@string/work_intro"
+        android:textAlignment="center"
+        android:textColor="@color/black_overlay"
+        android:textSize="14sp" />
+
+    //Start Button
+
+    <Button
+        android:id="@+id/startWorkingButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:padding="@dimen/text_view_padding"
+        android:scaleType="centerInside"
+        android:text="@string/work_button"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+</RelativeLayout>
