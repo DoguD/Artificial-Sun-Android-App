@@ -20,7 +20,7 @@
         android:layout_alignParentTop="true"
         android:layout_margin="20dp"
         android:text="TextView"
-        android:textColor="#ffffff"
+        android:textColor="@color/black_overlay"
         android:textAlignment="center"
         android:textSize="40sp"
         android:visibility="invisible" />
@@ -35,7 +35,7 @@
         android:layout_marginTop="53dp"
         android:padding="16dp"
         android:text="2 + 2 = ?"
-        android:textColor="#ffffff"
+        android:textColor="@color/black_overlay"
         android:textSize="30sp"
         android:visibility="visible" />
 

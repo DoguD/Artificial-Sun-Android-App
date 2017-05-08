@@ -12,6 +12,8 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 
+import static android.os.SystemClock.sleep;
+
 public class AlarmFullScreenActivity extends AppCompatActivity {
 
     Window window; //Window (Pencere) öğesi oluşturuluyor
@@ -29,9 +31,10 @@ public class AlarmFullScreenActivity extends AppCompatActivity {
             alarmUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION); //Varsayılan bildirim zil sesi alarmUri'ye atanıyor
         }
         final Ringtone ringtone = RingtoneManager.getRingtone(getApplicationContext(), alarmUri);
-        ringtone.play(); //Zil sesi başlatılıyor
 
         MakeBright(); //Ekran parlaklığını arttıran method çalıştırılıyor
+        sleep(300000); // Odaya ışık vermesi için zil sesi çalmadan önce 5 dakika bekle
+        ringtone.play(); //Zil sesi başlatılıyor
 
         //wakeUpButton'a OnClickListener(tıklanabilme özelliği) ekleniyor
         wakeUpButton.setOnClickListener(new View.OnClickListener() {

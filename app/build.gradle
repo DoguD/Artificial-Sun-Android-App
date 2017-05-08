@@ -8,8 +8,8 @@ android {
         applicationId "co.oriens.bluelight"
         minSdkVersion 15
         targetSdkVersion 24
-        versionCode 8
-        versionName "2.1.2"
+        versionCode 10
+        versionName "2.2"
     }
     buildTypes {
         release {

@@ -28,41 +28,6 @@
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true" />
 
-        <Button
-            android:id="@+id/buttonSetAlarm"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
-            android:background="@color/colorAccent"
-            android:layout_margin="@dimen/text_view_margin"
-            android:padding="@dimen/text_view_padding"
-            android:elevation="@dimen/button_elevation"
-
-            android:text="@string/set_alarm_button"
-            android:textColor="@color/white"
-            android:textSize="24sp"
-
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:id="@+id/textIsAlarmSet"
-            android:text="@string/is_alarm_set"
-
-            android:layout_centerHorizontal="true"
-            android:layout_above="@id/buttonSetAlarm"
-
-            android:layout_margin="@dimen/text_view_margin"
-            android:padding="@dimen/text_view_padding"
-
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:textColor="@color/black_overlay"
-            android:textAlignment="center"/>
-
         <TimePicker
             android:visibility="gone"
             android:id="@+id/alarmTimePicker"
@@ -79,11 +44,50 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/alarmTimePicker"
             android:layout_margin="@dimen/text_view_margin"
+
             android:padding="@dimen/text_view_padding"
+
             android:layout_centerHorizontal="true"
             android:text="@string/set_alarm_button"
+
             android:background="@color/colorAccent"
             android:textColor="@color/white"
             android:visibility="gone"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:id="@+id/textIsAlarmSet"
+            android:text="@string/is_alarm_set"
+
+            android:padding="@dimen/text_view_padding"
+
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/black_overlay"
+            android:textAlignment="center"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
+
+        <Button
+            android:id="@+id/buttonSetAlarm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:background="@color/colorAccent"
+            android:padding="@dimen/text_view_padding"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="40dp"
+            android:elevation="@dimen/button_elevation"
+
+            android:text="@string/set_alarm_button"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+
+            android:layout_below="@+id/textIsAlarmSet"
+            android:layout_toRightOf="@+id/alarmTimePicker"
+            android:layout_toEndOf="@+id/alarmTimePicker" />
     </RelativeLayout>
 </FrameLayout>

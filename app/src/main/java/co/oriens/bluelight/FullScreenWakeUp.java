@@ -15,6 +15,8 @@ import android.widget.TextView;
 
 import java.util.Random;
 
+import static android.os.SystemClock.sleep;
+
 public class FullScreenWakeUp extends AppCompatActivity {
 
     //Objeler ve değişkenler oluşturuluyor
@@ -25,6 +27,10 @@ public class FullScreenWakeUp extends AppCompatActivity {
     TextView questionTextView;//Matematik sorusu metin kutusu
     Button answerButton1, answerButton2, answerButton3;//Matematik soruları için cevap butonları
     int correctAnswerButton;//Doğru cevabın hangi cevap buttonunda olduğunu belirleyen tam sayı değişkeni
+
+    //Şu anki saniye değişkeni
+
+    int currentSecond;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,15 +57,16 @@ public class FullScreenWakeUp extends AppCompatActivity {
             }
         });
 
-        MakeBright();//Ekran parlaklaştırma methodu çalıştırılıyor
+        currentSecond=60; //Kalan saniye değşkenini 60 a olarak belirle
         StartTimer();//Geri sayım başlatma methodu çalıştırılıyor
         NewQuestion();//Yeni soru ekrana getiren method çalıştırılıyor
     }
 
     //Ekran parlaklığını arttırma methodu
-    void MakeBright() {
+    void MakeBright(float targetBrigthness) {
         WindowManager.LayoutParams layoutParams = window.getAttributes();//Telefon ekranı parametreleri alınıyor
-        layoutParams.screenBrightness = 1;//Parlaklık parametresi 1 (%100)'e çıkarılıyor
+
+        layoutParams.screenBrightness = targetBrigthness;//Parlaklık parametresi targetBrigthness değerine göre artırılıyor
         window.setAttributes(layoutParams);//Değişiklikler telefon ekranına uygulanıyor
     }
 
@@ -70,6 +77,16 @@ public class FullScreenWakeUp extends AppCompatActivity {
 
             public void onTick(long millisUntilFinished) { //Her saniye geçtiğinde çalışan method
                 timerTextView.setText((millisUntilFinished / 1000) + " " + getString(R.string.wake_up_session_countdown)); //Metin kutusundaki kalan saniyeler güncelleniyor
+
+                //Kademeli olarak parlaklığı artırma koşulu
+                int currentSecond=60;
+                if( millisUntilFinished>=44000 && (millisUntilFinished / 1000) != currentSecond){ // Eğer 44 saniyeden fazla kalmışssa parlaklığı %5 artır (her saniye)
+                    float targetBrigthness; // Hedef parlaklık değişkeni
+                    targetBrigthness = (61-(millisUntilFinished/1000)) * 0.05f; // Her 4 saniyede bir hedef parlaklık %20 artırılıyor
+                    MakeBright(targetBrigthness); //Parlaklığı artırma methodu çalıştırılıyor
+
+                    currentSecond=(int)(millisUntilFinished / 1000); //Şu anki saniye değişkenini yenile
+                }
             }
 
             //Geri sayım bittiğinde uygulanacaklar methodu
