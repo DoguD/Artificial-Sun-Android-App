@@ -54,4 +54,5 @@
     <string name="work_title">Çalışma Zamanı</string>
     <string name="wake_up_title">Uyanma Zamanı</string>
     <string name="wake_up_session_countdown">saniye kaldı</string>
+    <string name="comming_soon">Yakında eklenecek.</string>
 </resources>

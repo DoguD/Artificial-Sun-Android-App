@@ -15,8 +15,6 @@ import android.widget.TextView;
 
 import java.util.Random;
 
-import static android.os.SystemClock.sleep;
-
 public class FullScreenWakeUp extends AppCompatActivity {
 
     //Objeler ve değişkenler oluşturuluyor

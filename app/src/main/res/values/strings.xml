@@ -71,5 +71,6 @@
     <string name="cancel_alarm">Cancel ALarm</string>
     <string name="work_title">Time To Work</string>
     <string name="wake_up_title">Time To Wake Up</string>
+    <string name="comming_soon">Comming soon...</string>
 
 </resources>
