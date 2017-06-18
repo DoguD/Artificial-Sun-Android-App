@@ -11,7 +11,7 @@ import android.widget.Button;
 import co.oriens.bluelight.FullScreenWakeUp;
 import co.oriens.bluelight.R;
 
-public class WakeUp extends Fragment {
+public class WakeUp extends Fragment { //
 
     //OBJECTS
     //start button
