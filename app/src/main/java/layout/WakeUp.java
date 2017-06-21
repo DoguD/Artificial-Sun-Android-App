@@ -22,7 +22,7 @@ public class WakeUp extends Fragment { //
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View layout=inflater.inflate(R.layout.fragment_wake_up, container, false);
-        /*
+
         //STARTING THE FULL SCREEN ACTIVITY
         //Define start button & OnClick Listener
         startButton = (Button) layout.findViewById(R.id.startButton);
@@ -34,7 +34,6 @@ public class WakeUp extends Fragment { //
         });
 
         //Return Layout
-        */
         return layout;
 
     }

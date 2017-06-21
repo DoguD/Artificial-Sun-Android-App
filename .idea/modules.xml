@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/BlueLight.iml" filepath="$PROJECT_DIR$/BlueLight.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/artificialsun.iml" filepath="$PROJECT_DIR$/artificialsun.iml" />
     </modules>
   </component>
 </project>
