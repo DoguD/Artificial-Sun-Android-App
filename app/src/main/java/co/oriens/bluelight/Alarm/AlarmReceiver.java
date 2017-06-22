@@ -1,4 +1,4 @@
-package co.oriens.bluelight;
+package co.oriens.bluelight.Alarm;
 
 //Gerekli eklentiler import ediliyor
 import android.app.Activity;

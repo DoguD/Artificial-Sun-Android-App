@@ -4,6 +4,8 @@
 
     <!--İZİNLER
     Permissions for alaram-->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:allowBackup="true"
@@ -45,13 +47,13 @@
 
         <!--Alarm servisi ve alıcısı tanımlanıyor-->
         <service
-            android:name=".AlarmService"
+            android:name=".Alarm.AlarmService"
             android:enabled="true" />
-        <receiver android:name=".AlarmReceiver" />
+        <receiver android:name=".Alarm.AlarmReceiver" />
 
         <!--Alarm vakti geldiğinde açılan tam ekran aktivite tanımlanıyor-->
         <activity
-            android:name=".AlarmFullScreenActivity"
+            android:name=".Alarm.AlarmFullScreenActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_alarm_full_screen"
             android:theme="@style/AppTheme.NoActionBar">

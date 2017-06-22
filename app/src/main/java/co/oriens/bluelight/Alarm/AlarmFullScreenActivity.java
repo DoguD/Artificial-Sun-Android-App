@@ -1,4 +1,4 @@
-package co.oriens.bluelight;
+package co.oriens.bluelight.Alarm;
 
 //gerekli eklentiler import ediliyor
 import android.content.Intent;
@@ -11,6 +11,9 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+
+import co.oriens.bluelight.FullScreenWakeUp;
+import co.oriens.bluelight.R;
 
 import static android.os.SystemClock.sleep;
 

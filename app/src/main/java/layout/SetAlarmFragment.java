@@ -14,8 +14,8 @@ import android.content.Intent;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.TimePicker;
-import co.oriens.bluelight.AlarmFullScreenActivity;
-import co.oriens.bluelight.AlarmReceiver;
+import co.oriens.bluelight.Alarm.AlarmFullScreenActivity;
+import co.oriens.bluelight.Alarm.AlarmReceiver;
 import co.oriens.bluelight.PrefManager;
 import co.oriens.bluelight.R;
 import static android.content.Context.ALARM_SERVICE;
@@ -44,7 +44,9 @@ public class SetAlarmFragment extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
-        instance = this; //instance tanımlanıyor
+        if(instance == null) {
+            instance = this; //instance tanımlanıyor
+        }
     }
 
     @Override
@@ -54,10 +56,8 @@ public class SetAlarmFragment extends Fragment {
 
         //Layout elementleri tanımlanıyor
         alarmTimePicker = (TimePicker) layout.findViewById(R.id.alarmTimePicker);
-        alarmTextView = (TextView) layout.findViewById(R.id.textIsAlarmSet);
-        setAlarmButton = (Button) layout.findViewById(R.id.buttonSetAlarm);
-        setAlarmButtonFinal =(Button) layout.findViewById(R.id.buttonSetAlarmFinal);
 
+        //Setting the Alarm Manager
         alarmManager = (AlarmManager) getActivity().getSystemService(ALARM_SERVICE); //Alarm Yöneticisi(AlarmManager) tanımlanıyor
 
         UpdateLayout();

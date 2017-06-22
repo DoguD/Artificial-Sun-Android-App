@@ -1,4 +1,4 @@
-package co.oriens.bluelight;
+package co.oriens.bluelight.Alarm;
 
 //Gerekli eklentiler import ediliyor
 import android.app.IntentService;
@@ -7,6 +7,8 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v4.app.NotificationCompat;
+
+import co.oriens.bluelight.R;
 import layout.SetAlarmFragment;
 
 public class AlarmService extends IntentService {
