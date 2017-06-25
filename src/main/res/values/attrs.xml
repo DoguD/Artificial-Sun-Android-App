@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Declare custom theme attributes that allow changing which styles are
+         used for button bars depending on the API level.
+         ?android:attr/buttonBarStyle is new as of API 11 so this is
+         necessary to support previous API levels. -->
+    <declare-styleable name="ButtonBarContainerTheme">
+        <attr name="metaButtonBarStyle" format="reference" />
+        <attr name="metaButtonBarButtonStyle" format="reference" />
+    </declare-styleable>
+
+
+    <declare-styleable name="com.better.alarm.view.VolumePreference">
+        <attr name="minValue" format="integer" />
+        <attr name="maxValue" format="integer" />
+        <attr name="cancelButton" format="boolean" />
+    </declare-styleable>
+    <attr name="alertFullScreenBackground" format="reference"/>
+    <attr name="alarmDetailsButtonStyle" format="reference"/>
+    <attr name="timePickerDeleteButtonStyle" format="reference"/>
+    <item type="id" name="numbers_key" />
+</resources>
