@@ -10,84 +10,17 @@
         android:background="@color/white"
 
         android:clipToPadding="false">
-
-        <TextView
-            android:id="@+id/textViewAlarmIntro"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:padding="@dimen/text_view_padding"
-            android:layout_margin="16dp"
-            android:background="@color/colorAccent"
-            android:elevation="@dimen/intro_box_elevation"
-
-            android:text="@string/set_alarm_intro"
-            android:textColor="@color/white"
-            android:textAlignment="center"
-
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true" />
-
-        <TimePicker
-            android:visibility="gone"
-            android:id="@+id/alarmTimePicker"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:timePickerMode="clock"
-            android:layout_alignParentTop="true"
-            android:layout_margin="16dp"/>
-
         <Button
-            android:id="@+id/buttonSetAlarmFinal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/alarmTimePicker"
-            android:layout_margin="@dimen/text_view_margin"
+            android:layout_height="match_parent"
+            android:id="@+id/buttonStartAlarmActivity"
+            android:padding="16dp"
 
-            android:padding="@dimen/text_view_padding"
-
-            android:layout_centerHorizontal="true"
-            android:text="@string/set_alarm_button"
+            android:text="I want an alarm!!!"
+            android:textColor="@color/white"
+            android:textSize="48sp"
 
             android:background="@color/colorAccent"
-            android:textColor="@color/white"
-            android:visibility="gone"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:id="@+id/textIsAlarmSet"
-            android:text="@string/is_alarm_set"
-
-            android:padding="@dimen/text_view_padding"
-
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:textColor="@color/black_overlay"
-            android:textAlignment="center"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true" />
-
-        <Button
-            android:id="@+id/buttonSetAlarm"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
-            android:background="@color/colorAccent"
-            android:padding="@dimen/text_view_padding"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginTop="40dp"
-            android:elevation="@dimen/button_elevation"
-
-            android:text="@string/set_alarm_button"
-            android:textColor="@color/white"
-            android:textSize="24sp"
-
-            android:layout_below="@+id/textIsAlarmSet"
-            android:layout_toRightOf="@+id/alarmTimePicker"
-            android:layout_toEndOf="@+id/alarmTimePicker" />
+            />
     </RelativeLayout>
 </FrameLayout>
