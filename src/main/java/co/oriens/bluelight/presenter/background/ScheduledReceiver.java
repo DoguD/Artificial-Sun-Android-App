@@ -14,8 +14,6 @@
  */
 package co.oriens.bluelight.presenter.background;
 
-import java.util.Calendar;
-
 import android.annotation.TargetApi;
 import android.app.AlarmManager;
 import android.app.AlarmManager.AlarmClockInfo;
@@ -27,15 +25,14 @@ import android.os.Build;
 import android.provider.Settings;
 import android.text.format.DateFormat;
 
+import java.util.Calendar;
+
+import co.github.androidutils.logger.Logger;
 import co.oriens.bluelight.model.interfaces.Intents;
 import co.oriens.bluelight.presenter.AlarmsListActivity;
-import co.github.androidutils.logger.Logger;
 
 /**
  * This class reacts on {@link } and {@link } and
- * 
- * @author Yuriy
- * 
  */
 public class ScheduledReceiver extends BroadcastReceiver {
     private static final String DM12 = "E h:mm aa";

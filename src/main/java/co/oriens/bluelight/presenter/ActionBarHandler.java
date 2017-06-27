@@ -56,8 +56,8 @@ public class ActionBarHandler {
 
         // Add data to the intent, the receiving app will decide what to do with
         // it.
-        intent.putExtra(Intent.EXTRA_SUBJECT, "https://play.google.com/store/apps/details?id=com.better.alarm");
-        intent.putExtra(Intent.EXTRA_TEXT, "https://play.google.com/store/apps/details?id=com.better.alarm");
+        intent.putExtra(Intent.EXTRA_SUBJECT, "https://play.google.com/store/apps/details?id=co.oriens.bluelight");
+        intent.putExtra(Intent.EXTRA_TEXT, "https://play.google.com/store/apps/details?id=co.oriens.bluelight");
 
         sp.setShareIntent(intent);
 
@@ -135,8 +135,8 @@ public class ActionBarHandler {
                 mContext.startActivity(intent);
             }
         });
-        builder.setTitle(co.oriens.bluelight.R.string.dashclock);
-        builder.setMessage(co.oriens.bluelight.R.string.dashclock_message);
+        //builder.setTitle(co.oriens.bluelight.R.string.dashclock);
+        //builder.setMessage(co.oriens.bluelight.R.string.dashclock_message);
         builder.setCancelable(true);
         builder.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
             @Override
@@ -155,8 +155,8 @@ public class ActionBarHandler {
                 mContext.startActivity(intent);
             }
         });
-        builder.setTitle(co.oriens.bluelight.R.string.mp3cutter);
-        builder.setMessage(co.oriens.bluelight.R.string.mp3cutter_message);
+        //builder.setTitle(co.oriens.bluelight.R.string.mp3cutter);
+        //builder.setMessage(co.oriens.bluelight.R.string.mp3cutter_message);
         builder.setCancelable(true);
         builder.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
             @Override

@@ -1,7 +1,5 @@
 package co.oriens.bluelight.model.persistance;
 
-import java.util.Calendar;
-
 import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.Context;
@@ -11,18 +9,17 @@ import android.media.RingtoneManager;
 import android.net.Uri;
 import android.provider.BaseColumns;
 
+import java.util.Calendar;
+
+import co.github.androidutils.logger.Logger;
+import co.github.androidutils.wakelock.WakeLockManager;
 import co.oriens.bluelight.BuildConfig;
 import co.oriens.bluelight.model.DaysOfWeek;
 import co.oriens.bluelight.model.IAlarmContainer;
 import co.oriens.bluelight.model.interfaces.Intents;
-import co.github.androidutils.logger.Logger;
-import co.github.androidutils.wakelock.WakeLockManager;
 
 /**
  * Active record container for all alarm data.
- * 
- * @author Yuriy
- * 
  */
 public class AlarmContainer implements IAlarmContainer {
     // ////////////////////////////

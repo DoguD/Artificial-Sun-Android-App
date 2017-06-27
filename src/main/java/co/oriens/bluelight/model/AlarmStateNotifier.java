@@ -7,9 +7,7 @@ import co.oriens.bluelight.model.interfaces.Intents;
 
 /**
  * Broadcasts alarm state with an intent
- * 
- * @author Yuriy
- * 
+ *
  */
 public class AlarmStateNotifier implements AlarmCore.IStateNotifier {
 

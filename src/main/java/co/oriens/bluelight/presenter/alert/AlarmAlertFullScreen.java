@@ -131,6 +131,8 @@ public class AlarmAlertFullScreen extends Activity implements TimePickerDialogFr
             }
 
             updateLayout();
+            //Increase brightness
+            MakeBright(1f,win);
 
             // Register to get the alarm killed/snooze/dismiss intent.
             IntentFilter filter = new IntentFilter();
@@ -142,6 +144,14 @@ public class AlarmAlertFullScreen extends Activity implements TimePickerDialogFr
         } catch (AlarmNotFoundException e) {
             Logger.getDefaultLogger().d("Alarm not found");
         }
+    }
+
+    //Method for increasing brightness
+    void MakeBright(float targetBrigthness, Window window) {
+        WindowManager.LayoutParams layoutParams = window.getAttributes();//Telefon ekranı parametreleri alınıyor
+
+        layoutParams.screenBrightness = targetBrigthness;//Parlaklık parametresi targetBrigthness değerine göre artırılıyor
+        window.setAttributes(layoutParams);//Değişiklikler telefon ekranına uygulanıyor
     }
 
     private void setTitle() {

@@ -1,42 +1,25 @@
-/*
- * Copyright (C) 2010 The Android Open Source Project
- * Copyright (C) 2013 Yuriy Kulikov yuriy.kulikov.87@gmail.com
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package co.oriens.bluelight;
-
-import static android.provider.AlarmClock.ACTION_SET_ALARM;
-import static android.provider.AlarmClock.EXTRA_HOUR;
-
-import java.util.Collection;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.AlarmClock;
 
+import com.google.common.base.Predicate;
+import com.google.common.collect.Collections2;
+
+import java.util.Collection;
+
+import co.github.androidutils.logger.Logger;
 import co.oriens.bluelight.model.AlarmsManager;
 import co.oriens.bluelight.model.interfaces.Alarm;
 import co.oriens.bluelight.model.interfaces.IAlarmsManager;
 import co.oriens.bluelight.model.interfaces.Intents;
 import co.oriens.bluelight.presenter.AlarmDetailsActivity;
 import co.oriens.bluelight.presenter.AlarmsListActivity;
-import co.github.androidutils.logger.Logger;
 
-import com.google.common.base.Predicate;
-import com.google.common.collect.Collections2;
+import static android.provider.AlarmClock.ACTION_SET_ALARM;
+import static android.provider.AlarmClock.EXTRA_HOUR;
 
 public class HandleSetAlarm extends Activity {
 
