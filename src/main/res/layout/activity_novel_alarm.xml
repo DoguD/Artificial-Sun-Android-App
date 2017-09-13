@@ -7,7 +7,7 @@
 
     //INTRO text
     <TextView
-        android:id="@+id/alarmIntroText"
+        android:id="@+id/textAlarmFullScreenIntro"
         android:text="@string/full_screen_alarm_intro"
 
         android:layout_width="match_parent"
@@ -27,7 +27,7 @@
         android:layout_width = "wrap_content"
         android:layout_height = "wrap_content"
 
-        android:layout_below="@id/alarmIntroText"
+        android:layout_below="@id/textAlarmFullScreenIntro"
         android:layout_marginTop="40dp"
         android:padding="16dp"
         android:layout_centerHorizontal = "true"
@@ -36,4 +36,33 @@
         android:textColor="@color/white"
         android:background="@color/colorAccent"
         />
+
+    // Initialy invisible timer
+    <TextView
+        android:id="@+id/textAlarmTimer"
+        android:layout_width = "wrap_content"
+        android:layout_height = "wrap_content"
+
+        android:layout_alignParentTop = "true"
+        android:layout_centerHorizontal = "true"
+
+        android:text = "60 seconds left"
+        android:textColor = "@color/black_overlay"
+
+        android:visibility="invisible"/>
+
+    // The square for the game
+    <Button
+        android:id="@+id/buttonSquare"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/white"
+
+        android:layout_marginTop="0dp"
+        android:layout_marginLeft="0dp"
+
+        android:visibility="invisible"/>
 </RelativeLayout>
