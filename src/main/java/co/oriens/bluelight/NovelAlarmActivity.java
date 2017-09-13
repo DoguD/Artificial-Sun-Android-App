@@ -7,7 +7,10 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import java.util.Random;
 
 public class NovelAlarmActivity extends AppCompatActivity {
     // VARIABLES
@@ -16,6 +19,13 @@ public class NovelAlarmActivity extends AppCompatActivity {
     TextView textAlarmTimer, textAlarmIntro;
     // Telephone Screen
     Window window;
+    // Realtive Layout
+    RelativeLayout relativeLayout;
+    // Layout Parameters
+    RelativeLayout.LayoutParams layoutParams;
+
+    // Random Object
+    Random rnd = new Random();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +41,10 @@ public class NovelAlarmActivity extends AppCompatActivity {
         buttonStopAlarm = (Button) findViewById(R.id.buttonStopAlarm);
         // Square button for game
         buttonSquare = (Button) findViewById(R.id.buttonSquare);
+        // Relative layout
+        relativeLayout = (RelativeLayout) findViewById(R.id.alarmFullScreenLayout);
+        // Layout Parameters
+        layoutParams = new RelativeLayout.LayoutParams(buttonSquare.getLayoutParams());
 
         //Set window
         window = getWindow();
@@ -62,10 +76,13 @@ public class NovelAlarmActivity extends AppCompatActivity {
 
         // Start Timer
         StartTimer();
+
+        // Transfer square button to a random location
+        transferToRandomLocation();
     }
 
     void squareButtonPressed(){
-
+        transferToRandomLocation();
     }
 
     void StartTimer() {
@@ -98,5 +115,19 @@ public class NovelAlarmActivity extends AppCompatActivity {
 
         layoutParams.screenBrightness = targetBrigthness;//Parlaklık parametresi targetBrigthness değerine göre artırılıyor
         window.setAttributes(layoutParams);//Değişiklikler telefon ekranına uygulanıyor
+    }
+
+    // Transfer the square button to a random location
+    void transferToRandomLocation(){
+        // Generate random x and y
+        int newX, newY;
+        newX = rnd.nextInt(relativeLayout.getWidth()-(buttonSquare.getWidth()+50+(2*20))); // 20 acts as a margin from borders
+        newY = rnd.nextInt(relativeLayout.getHeight()-(buttonSquare.getHeight()+50+(2*20)
+                +textAlarmTimer.getHeight()+16));// 16 is the margin of textAlarmTimer
+
+        // Transfer the square
+        layoutParams.setMargins(20+newX,textAlarmTimer.getHeight()+16+50+20+newY,0,0);
+        buttonSquare.setLayoutParams(layoutParams);
+
     }
 }
