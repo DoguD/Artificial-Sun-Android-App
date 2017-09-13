@@ -16,8 +16,8 @@ android {
         applicationId "co.oriens.bluelight"
         minSdkVersion 15
         targetSdkVersion 24
-        versionCode 12
-        versionName "2.3"
+        versionCode 13
+        versionName "2.3.2"
 
         testApplicationId "co.oriens.bluelight.test"
         testInstrumentationRunner "android.test.InstrumentationTestRunner"
