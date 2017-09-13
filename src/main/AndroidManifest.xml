@@ -32,7 +32,6 @@
             android:taskAffinity="">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
             </intent-filter>
         </activity>
 
@@ -200,12 +199,15 @@
             </intent-filter>
         </service>
 
-        <!--Giriş Aktivitesi (Kullanıcı uygulamayı ilk açtığında onu bilgilendiren slaytlar)
-        tanımlanıyor-->
+        <!--
+        Giriş Aktivitesi (Kullanıcı uygulamayı ilk açtığında onu bilgilendiren slaytlar)
+        tanımlanıyor
+        -->
 
-        <activity android:name=".WelcomeActivity"
-            android:theme="@style/AppTheme"
-            android:supportsRtl="true">
+        <activity
+            android:name=".WelcomeActivity"
+            android:supportsRtl="true"
+            android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -213,35 +215,36 @@
             </intent-filter>
         </activity>
 
-        <!--Ana aktivite-->
+        <!-- Ana aktivite -->
         <activity
             android:name=".TabActivity"
             android:label="@string/title_activity_tab"
             android:theme="@style/AppTheme.NoActionBar" />
 
-        <!--Uyanma anı için matematik işlemli tam ekran mavi ışık aktivitesi tanımlanıyor-->
+        <!-- Uyanma anı için matematik işlemli tam ekran mavi ışık aktivitesi tanımlanıyor -->
         <activity
             android:name=".FullScreenWakeUp"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/wake_up_title"
             android:theme="@style/AppTheme" />
 
-        <!--25 dakikalık mavi ışık ile çalışma kativitesi tanımlanıyor-->
+        <!-- 25 dakikalık mavi ışık ile çalışma kativitesi tanımlanıyor -->
         <activity
             android:name=".FullScreenWork"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/work_title"
             android:theme="@style/AppTheme" />
 
-        <!--Alarm servisi ve alıcısı tanımlanıyor-->
+        <!-- Alarm servisi ve alıcısı tanımlanıyor -->
 
-        <!--Alarm vakti geldiğinde açılan tam ekran aktivite tanımlanıyor-->
+
+        <!-- Alarm vakti geldiğinde açılan tam ekran aktivite tanımlanıyor -->
         <activity
             android:name=".AlarmFullScreenActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_alarm_full_screen"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".NovelAlarmActivity"></activity>
     </application>
 
 </manifest>
