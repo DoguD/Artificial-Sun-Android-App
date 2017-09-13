@@ -1,25 +1,39 @@
-<?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/cyanA200"
-
-    tools:context="co.oriens.bluelight.NovelAlarmActivity">
+    tools:context="co.oriens.bluelight.AlarmFullScreenActivity"
+    android:background="@color/cyanA200">
 
     //INTRO text
     <TextView
         android:id="@+id/alarmIntroText"
         android:text="@string/full_screen_alarm_intro"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
-        android:textAlignment="center"
+
+        android:gravity="center"
         android:textColor="@color/white"
         android:textStyle="bold"
         android:textSize="40sp" />
 
-</android.support.constraint.ConstraintLayout>
+    // End ringtone, start alarm game
+    <Button
+        android:id = "@+id/buttonStopAlarm"
+        android:layout_width = "wrap_content"
+        android:layout_height = "wrap_content"
+
+        android:layout_below="@id/alarmIntroText"
+        android:layout_marginTop="40dp"
+        android:padding="16dp"
+        android:layout_centerHorizontal = "true"
+
+        android:text="STOP ALARM"
+        android:textColor="@color/white"
+        android:background="@color/colorAccent"
+        />
+</RelativeLayout>

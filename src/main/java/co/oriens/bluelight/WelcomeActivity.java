@@ -20,8 +20,6 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import co.oriens.bluelight.presenter.AlarmsListActivity;
-
 
 public class WelcomeActivity extends AppCompatActivity {
 
@@ -126,7 +124,7 @@ public class WelcomeActivity extends AppCompatActivity {
     //Tanıtımdan sonra hangi aktivitenin açılacağını kontrol eden method
     private void launchMainActivity() {
         prefManager.setFirstTimeLaunch(false);
-        startActivity(new Intent(WelcomeActivity.this, AlarmsListActivity.class));
+        startActivity(new Intent(WelcomeActivity.this, /*AlarmsListActivity.class*/NovelAlarmActivity.class));
         finish();
     }
 
