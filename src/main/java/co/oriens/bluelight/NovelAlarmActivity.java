@@ -1,8 +1,11 @@
 package co.oriens.bluelight;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
+import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -27,6 +30,13 @@ public class NovelAlarmActivity extends AppCompatActivity {
     // Random Object
     Random rnd = new Random();
 
+    // dpi
+    DisplayMetrics metrics ;
+    float density;
+
+    // Context
+    Context ctx = this;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +58,10 @@ public class NovelAlarmActivity extends AppCompatActivity {
 
         //Set window
         window = getWindow();
+
+        // Dpi
+        metrics = getApplicationContext().getResources().getDisplayMetrics();
+        density = (float)metrics.densityDpi / DisplayMetrics.DENSITY_DEFAULT;
 
         // SET ON CLICK LISTENERS
         // Stop alarm and play game
@@ -100,6 +114,7 @@ public class NovelAlarmActivity extends AppCompatActivity {
 
                     currentSecond=(int)(millisUntilFinished / 1000); //Şu anki saniye değişkenini yenile
                 }
+                shrinkSquare();
             }
 
             //Geri sayım bittiğinde uygulanacaklar methodu
@@ -129,5 +144,28 @@ public class NovelAlarmActivity extends AppCompatActivity {
         layoutParams.setMargins(20+newX,textAlarmTimer.getHeight()+16+50+20+newY,0,0);
         buttonSquare.setLayoutParams(layoutParams);
 
+    }
+
+    // Shrinking the square
+    void shrinkSquare(){
+        // dpi
+        //float density = ctx.getResources().getDisplayMetrics().density;
+
+        float newLength;
+
+        // Shrink if possible
+        if((newLength = buttonSquare.getWidth())>30*density){
+            newLength -= 10*density;
+        }
+        else{ // Create new square and add time to timer
+            transferToRandomLocation();
+            newLength = 50*density;
+
+        }
+        layoutParams.width = ((int) newLength);
+        layoutParams.height = ((int)newLength);
+
+        Log.d("NOVEL ALARM Pixel:",""+newLength);
+        Log.d("NOVEL ALARM DP:",""+newLength/density);
     }
 }

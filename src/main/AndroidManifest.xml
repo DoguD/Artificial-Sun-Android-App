@@ -244,6 +244,7 @@
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_alarm_full_screen"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+
         <activity android:name=".NovelAlarmActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_alarm_full_screen"
