@@ -215,36 +215,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <!-- Ana aktivite -->
-        <activity
-            android:name=".TabActivity"
-            android:label="@string/title_activity_tab"
-            android:theme="@style/AppTheme.NoActionBar" />
-
-        <!-- Uyanma anı için matematik işlemli tam ekran mavi ışık aktivitesi tanımlanıyor -->
-        <activity
-            android:name=".FullScreenWakeUp"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="@string/wake_up_title"
-            android:theme="@style/AppTheme" />
-
-        <!-- 25 dakikalık mavi ışık ile çalışma kativitesi tanımlanıyor -->
-        <activity
-            android:name=".FullScreenWork"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="@string/work_title"
-            android:theme="@style/AppTheme" />
-
-        <!-- Alarm servisi ve alıcısı tanımlanıyor -->
-
-
         <!-- Alarm vakti geldiğinde açılan tam ekran aktivite tanımlanıyor -->
-        <activity
-            android:name=".AlarmFullScreenActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="@string/title_activity_alarm_full_screen"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
 
         <activity android:name=".NovelAlarmActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
