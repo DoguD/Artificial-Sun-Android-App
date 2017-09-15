@@ -15,6 +15,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.ShareActionProvider;
+import android.widget.Toast;
 
 import com.google.common.base.Preconditions;
 
@@ -85,7 +86,10 @@ public class ActionBarHandler {
             return true;
 
         case co.oriens.bluelight.R.id.menu_review:
-            showReview();
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id="
+                    + mContext.getApplicationContext().getPackageName()));
+            mContext.startActivity(intent);
+            // showReview();
             return true;
 
         case co.oriens.bluelight.R.id.menu_bugreport:
@@ -104,6 +108,7 @@ public class ActionBarHandler {
         return false;
     }
 
+    /*
     private void showReview() {
         AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
         builder.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
@@ -123,7 +128,9 @@ public class ActionBarHandler {
             }
         });
         builder.create().show();
+
     }
+    */
 
     private void showDashClock() {
         AlertDialog.Builder builder = new AlertDialog.Builder(mContext);

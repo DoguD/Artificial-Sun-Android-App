@@ -27,13 +27,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.melnykov.fab.FloatingActionButton;
+
+import co.github.androidutils.logger.Logger;
 import co.oriens.bluelight.model.AlarmsManager;
 import co.oriens.bluelight.model.interfaces.Alarm;
 import co.oriens.bluelight.model.interfaces.AlarmNotFoundException;
 import co.oriens.bluelight.model.interfaces.Intents;
-import co.github.androidutils.logger.Logger;
-
-import com.melnykov.fab.*;
 
 /**
  * This activity displays a list of alarms and optionally a details fragment.
@@ -42,10 +42,18 @@ public class AlarmsListActivity extends Activity implements TimePickerDialogFrag
 
     private ActionBarHandler mActionBarHandler;
 
+    //Instance
+    public static AlarmsListActivity instance;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setTheme(DynamicThemeHandler.getInstance().getIdForName(AlarmsListActivity.class.getName()));
         super.onCreate(savedInstanceState);
+
+        // Set instance
+        if(instance == null){
+            instance = this;
+        }
 
         mActionBarHandler = new ActionBarHandler(this);
 
@@ -203,4 +211,10 @@ public class AlarmsListActivity extends Activity implements TimePickerDialogFrag
             Logger.getDefaultLogger().d("no timePickerAlarm was restored");
         }
     }
+
+    /*
+    public void toastCantReachGooglePlay(){
+        Toast.makeText(getApplicationContext(),"Can't reach Google Play",Toast.LENGTH_SHORT);
+    }
+    */
 }
