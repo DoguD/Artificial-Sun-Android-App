@@ -29,7 +29,8 @@
             android:configChanges="orientation|keyboardHidden|keyboard|navigation"
             android:exported="true"
             android:label="@string/alarm_list_title"
-            android:taskAffinity="">
+            android:taskAffinity=""
+            android:theme = "@android:style/Theme.Holo.Dialog">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
