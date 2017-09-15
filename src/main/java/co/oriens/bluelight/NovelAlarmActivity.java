@@ -15,6 +15,8 @@ import android.widget.TextView;
 
 import java.util.Random;
 
+import static java.lang.Math.round;
+
 public class NovelAlarmActivity extends AppCompatActivity {
     // VARIABLES
     // LAYOUT ELEMENTS
@@ -36,6 +38,10 @@ public class NovelAlarmActivity extends AppCompatActivity {
 
     // Context
     Context ctx = this;
+
+    // Timer Object and second integer
+    CountDownTimer timer;
+    int remainingSeconds;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,6 +95,7 @@ public class NovelAlarmActivity extends AppCompatActivity {
         textAlarmTimer.setVisibility(View.VISIBLE);
 
         // Start Timer
+        remainingSeconds = 30;
         StartTimer();
 
         // Transfer square button to a random location
@@ -97,29 +104,51 @@ public class NovelAlarmActivity extends AppCompatActivity {
 
     void squareButtonPressed(){
         transferToRandomLocation();
+        // Reset its size
+        layoutParams.width = (round(50*density));
+        layoutParams.height = (round(50*density));
     }
 
     void StartTimer() {
-        new CountDownTimer(60000, 1000) {//Yeni geri sayım methodu oluşturuluyor
-
+        timer = new CountDownTimer(3000000, 1000) {//Yeni geri sayım methodu oluşturuluyor
+            float targetBrigthness = 0f;
             public void onTick(long millisUntilFinished) { //Her saniye geçtiğinde çalışan method
-                textAlarmTimer.setText((millisUntilFinished / 1000) + " " + getString(R.string.wake_up_session_countdown)); //Metin kutusundaki kalan saniyeler güncelleniyor
+                // Exit if the timer has reached 0
+                if(remainingSeconds <= 0){
+                    Log.d("NOVEL ALARM:","Shold the timer finsih");
+                    textAlarmTimer.setText(getString(R.string.wake_up_session_finished));//Geri sayım metin kutusuna "ARTIK ENERJİKSİNİZ" yazısı atanıyor
+                    buttonSquare.setVisibility(View.INVISIBLE);
+                    timer.cancel();
+                }
+                else{
+                    // Decrease remaining seconds for display
+                    remainingSeconds -= 1;
 
-                //Kademeli olarak parlaklığı artırma koşulu
-                int currentSecond=60;
+                    // Display remaining time
+                    textAlarmTimer.setText(remainingSeconds + " " + getString(R.string.wake_up_session_countdown)); //Metin kutusundaki kalan saniyeler güncelleniyor
+
+                    //Kademeli olarak parlaklığı artırma koşulu
+                /*int currentSecond=60;
                 if( millisUntilFinished>=44000 && (millisUntilFinished / 1000) != currentSecond){ // Eğer 44 saniyeden fazla kalmışssa parlaklığı %5 artır (her saniye)
                     float targetBrigthness; // Hedef parlaklık değişkeni
                     targetBrigthness = (61-(millisUntilFinished/1000)) * 0.05f; // Her 4 saniyede bir hedef parlaklık %20 artırılıyor
                     MakeBright(targetBrigthness); //Parlaklığı artırma methodu çalıştırılıyor
 
                     currentSecond=(int)(millisUntilFinished / 1000); //Şu anki saniye değişkenini yenile
+                }*/
+                    // Increase brightness gradually
+                    if(targetBrigthness < 1f){
+                        targetBrigthness += 0.05f;
+                        MakeBright(targetBrigthness);
+                    }
+
+                    // Execute shrink square method
+                    shrinkSquare();
                 }
-                shrinkSquare();
             }
 
-            //Geri sayım bittiğinde uygulanacaklar methodu
+            //Empty method for the end of timer, because it is cancelled
             public void onFinish() {
-                textAlarmTimer.setText(getString(R.string.wake_up_session_finished));//Geri sayım metin kutusuna "ARTIK ENERJİKSİNİZ" yazısı atanıyor
             }
         }.start();
     }
@@ -136,9 +165,9 @@ public class NovelAlarmActivity extends AppCompatActivity {
     void transferToRandomLocation(){
         // Generate random x and y
         int newX, newY;
-        newX = rnd.nextInt(relativeLayout.getWidth()-(buttonSquare.getWidth()+50+(2*20))); // 20 acts as a margin from borders
+        newX = rnd.nextInt(relativeLayout.getWidth()-(buttonSquare.getWidth()+50+(2*20))*round(density)); // 20 acts as a margin from borders
         newY = rnd.nextInt(relativeLayout.getHeight()-(buttonSquare.getHeight()+50+(2*20)
-                +textAlarmTimer.getHeight()+16));// 16 is the margin of textAlarmTimer
+                +textAlarmTimer.getHeight()+16)*round(density));// 16 is the margin of textAlarmTimer
 
         // Transfer the square
         layoutParams.setMargins(20+newX,textAlarmTimer.getHeight()+16+50+20+newY,0,0);
@@ -147,25 +176,37 @@ public class NovelAlarmActivity extends AppCompatActivity {
     }
 
     // Shrinking the square
-    void shrinkSquare(){
-        // dpi
-        //float density = ctx.getResources().getDisplayMetrics().density;
-
+    boolean shrinkSquare(){
         float newLength;
+        boolean result = true;
 
         // Shrink if possible
         if((newLength = buttonSquare.getWidth())>30*density){
             newLength -= 10*density;
         }
         else{ // Create new square and add time to timer
+            // Add time to timer
+            remainingSeconds += 5;
+            // Display remaining time
+            textAlarmTimer.setText(remainingSeconds + " " + getString(R.string.wake_up_session_countdown)); //Metin kutusundaki kalan saniyeler güncelleniyor
+
+            // New square
             transferToRandomLocation();
             newLength = 50*density;
-
+            result = false;
         }
         layoutParams.width = ((int) newLength);
         layoutParams.height = ((int)newLength);
 
         Log.d("NOVEL ALARM Pixel:",""+newLength);
         Log.d("NOVEL ALARM DP:",""+newLength/density);
+
+        return result;
     }
+
+    // Overriding methods for preventing going back
+    @Override
+    public void onBackPressed() {
+    }
+
 }

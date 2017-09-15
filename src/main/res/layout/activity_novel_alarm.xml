@@ -12,7 +12,7 @@
         android:id="@+id/textAlarmFullScreenIntro"
         android:text="@string/full_screen_alarm_intro"
 
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
