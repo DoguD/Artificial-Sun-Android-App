@@ -215,8 +215,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!-- Alarm vakti geldiğinde açılan tam ekran aktivite tanımlanıyor -->
 
+        <!-- Alarm vakti geldiğinde açılan tam ekran aktivite tanımlanıyor -->
         <activity android:name=".NovelAlarmActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_alarm_full_screen"
