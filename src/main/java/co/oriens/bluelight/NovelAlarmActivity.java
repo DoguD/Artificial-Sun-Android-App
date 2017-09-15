@@ -185,11 +185,15 @@ public class NovelAlarmActivity extends AppCompatActivity {
             newLength -= 10*density;
         }
         else{ // Create new square and add time to timer
-            // Add time to timer
-            remainingSeconds += 5;
-            // Display remaining time
-            textAlarmTimer.setText(remainingSeconds + " " + getString(R.string.wake_up_session_countdown)); //Metin kutusundaki kalan saniyeler güncelleniyor
+            // To prevent a bug: timer cancels but more seconds are added here
+            if(remainingSeconds>0){
+                // Add time to timer
+                remainingSeconds += 5;
+                // Display remaining time
+                textAlarmTimer.setText(remainingSeconds + " " + getString(R.string.wake_up_session_countdown)); //Metin kutusundaki kalan saniyeler güncelleniyor
 
+            }
+            
             // New square
             transferToRandomLocation();
             newLength = 50*density;
