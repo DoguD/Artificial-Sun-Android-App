@@ -193,7 +193,7 @@ public class NovelAlarmActivity extends AppCompatActivity {
                 textAlarmTimer.setText(remainingSeconds + " " + getString(R.string.wake_up_session_countdown)); //Metin kutusundaki kalan saniyeler güncelleniyor
 
             }
-            
+
             // New square
             transferToRandomLocation();
             newLength = 50*density;
