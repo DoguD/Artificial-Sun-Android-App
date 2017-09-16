@@ -31,6 +31,7 @@ import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -45,6 +46,7 @@ import android.widget.TextView;
 
 import java.util.Random;
 
+import co.github.androidutils.logger.Logger;
 import co.oriens.bluelight.R;
 import co.oriens.bluelight.model.AlarmsManager;
 import co.oriens.bluelight.model.interfaces.Alarm;
@@ -54,7 +56,6 @@ import co.oriens.bluelight.model.interfaces.Intents;
 import co.oriens.bluelight.presenter.DynamicThemeHandler;
 import co.oriens.bluelight.presenter.SettingsActivity;
 import co.oriens.bluelight.presenter.TimePickerDialogFragment;
-import co.github.androidutils.logger.Logger;
 
 import static java.lang.Math.round;
 
@@ -325,6 +326,7 @@ public class AlarmAlertFullScreen extends Activity implements TimePickerDialogFr
     private void dismiss() {
         alarmsManager.dismiss(mAlarm);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD);
+
     }
 
     private boolean isSnoozeEnabled() {
@@ -453,6 +455,15 @@ public class AlarmAlertFullScreen extends Activity implements TimePickerDialogFr
                     textAlarmTimer.setText(getString(R.string.wake_up_session_finished));//Geri sayım metin kutusuna "ARTIK ENERJİKSİNİZ" yazısı atanıyor
                     buttonSquare.setVisibility(View.INVISIBLE);
                     timer.cancel();
+
+                    // Wait one second and dismiss the alarm
+                    final Handler handler = new Handler();
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            dismiss();
+                        }
+                    }, 1000);
                 }
                 else{
                     // Decrease remaining seconds for display
@@ -460,12 +471,12 @@ public class AlarmAlertFullScreen extends Activity implements TimePickerDialogFr
 
                     // Display remaining time
                     textAlarmTimer.setText(remainingSeconds + " " + getString(R.string.wake_up_session_countdown)); //Metin kutusundaki kalan saniyeler güncelleniyor
-                    
+
                     // Increase brightness gradually
-                    if(targetBrigthness < 1f){
+                    /*if(targetBrigthness < 1f){
                         targetBrigthness += 0.05f;
                         MakeBright(targetBrigthness);
-                    }
+                    }*/
 
                     // Execute shrink square method
                     shrinkSquare();
@@ -476,14 +487,6 @@ public class AlarmAlertFullScreen extends Activity implements TimePickerDialogFr
             public void onFinish() {
             }
         }.start();
-    }
-
-    //Ekran parlaklığını arttırma methodu
-    void MakeBright(float targetBrigthness) {
-        WindowManager.LayoutParams layoutParams = window.getAttributes();//Telefon ekranı parametreleri alınıyor
-
-        layoutParams.screenBrightness = targetBrigthness;//Parlaklık parametresi targetBrigthness değerine göre artırılıyor
-        window.setAttributes(layoutParams);//Değişiklikler telefon ekranına uygulanıyor
     }
 
     // Transfer the square button to a random location
