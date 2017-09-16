@@ -57,6 +57,7 @@ import co.oriens.bluelight.presenter.DynamicThemeHandler;
 import co.oriens.bluelight.presenter.SettingsActivity;
 import co.oriens.bluelight.presenter.TimePickerDialogFragment;
 
+import static android.view.View.GONE;
 import static java.lang.Math.round;
 
 /**
@@ -83,7 +84,7 @@ public class AlarmAlertFullScreen extends Activity implements TimePickerDialogFr
     // VARIABLES
     // LAYOUT ELEMENTS
     Button buttonStopAlarm, buttonSquare;
-    TextView textAlarmTimer, textAlarmIntro;
+    TextView textAlarmTimer, textAlarmIntro, textAlarmFinished;
     // Telephone Screen
     Window window;
     // Realtive Layout
@@ -189,6 +190,8 @@ public class AlarmAlertFullScreen extends Activity implements TimePickerDialogFr
         // SET LAYOUT ELEMENTS
         // Intro
         textAlarmIntro = (TextView) findViewById(R.id.textAlarmFullScreenIntro);
+        // Finished
+        textAlarmFinished = (TextView) findViewById(R.id.textAlarmFullScreenEnergized);
         // Timer
         textAlarmTimer = (TextView) findViewById(R.id.textAlarmTimer);
         // Stop alarm
@@ -242,8 +245,8 @@ public class AlarmAlertFullScreen extends Activity implements TimePickerDialogFr
             // in non-full screen mode we already see the label in the title.
             // Therefore we hade the views with an additional label
             // also, if the label is default, do not show it
-            textView.setVisibility(View.GONE);
-            findViewById(R.id.alert_label_divider).setVisibility(View.GONE);
+            textView.setVisibility(GONE);
+            findViewById(R.id.alert_label_divider).setVisibility(GONE);
         }
     }
 
@@ -425,8 +428,8 @@ public class AlarmAlertFullScreen extends Activity implements TimePickerDialogFr
     // FUNCTIONS
     void stopAlarmAndStartGame(){
         // Arrange (in)visibility
-        buttonStopAlarm.setVisibility(View.GONE);
-        textAlarmIntro.setVisibility(View.GONE);
+        buttonStopAlarm.setVisibility(GONE);
+        textAlarmIntro.setVisibility(GONE);
         buttonSquare.setVisibility(View.VISIBLE);
         textAlarmTimer.setVisibility(View.VISIBLE);
 
@@ -452,7 +455,9 @@ public class AlarmAlertFullScreen extends Activity implements TimePickerDialogFr
                 // Exit if the timer has reached 0
                 if(remainingSeconds <= 0){
                     Log.d("NOVEL ALARM:","Shold the timer finsih");
-                    textAlarmTimer.setText(getString(R.string.wake_up_session_finished));//Geri sayım metin kutusuna "ARTIK ENERJİKSİNİZ" yazısı atanıyor
+                    textAlarmIntro.setVisibility(GONE);
+                    textAlarmFinished.setVisibility(View.VISIBLE);
+                    //textAlarmTimer.setText(getString(R.string.wake_up_session_finished));//Geri sayım metin kutusuna "ARTIK ENERJİKSİNİZ" yazısı atanıyor
                     buttonSquare.setVisibility(View.INVISIBLE);
                     timer.cancel();
 

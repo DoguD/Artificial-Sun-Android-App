@@ -37,6 +37,22 @@
         android:textStyle="bold"
         android:textSize="40sp" />
 
+    // You are enegized Text
+    <TextView
+        android:id="@+id/textAlarmFullScreenEnergized"
+        android:text="@string/wake_up_session_finished"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="40sp" />
+
     // End ringtone, start alarm game
     <Button
         android:id = "@+id/buttonStopAlarm"
