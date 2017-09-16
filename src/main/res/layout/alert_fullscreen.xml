@@ -26,13 +26,12 @@
     <FrameLayout
         android:id="@+id/alert_fullscreen_frame"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        style="?attr/alertFullScreenBackground">
+        android:layout_height="match_parent"
+        android:layout_gravity="center">
 
         <include
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             layout="@layout/alert" />
     </FrameLayout>
 
