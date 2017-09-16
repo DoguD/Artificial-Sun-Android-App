@@ -17,6 +17,8 @@
 
 package co.oriens.bluelight.presenter.alert;
 
+import java.util.Calendar;
+
 import android.app.KeyguardManager;
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -28,9 +30,6 @@ import android.preference.PreferenceManager;
 import android.support.v4.app.NotificationCompat;
 import android.text.format.DateFormat;
 
-import java.util.Calendar;
-
-import co.github.androidutils.logger.Logger;
 import co.oriens.bluelight.model.AlarmsManager;
 import co.oriens.bluelight.model.interfaces.Alarm;
 import co.oriens.bluelight.model.interfaces.AlarmNotFoundException;
@@ -38,6 +37,7 @@ import co.oriens.bluelight.model.interfaces.IAlarmsManager;
 import co.oriens.bluelight.model.interfaces.Intents;
 import co.oriens.bluelight.model.interfaces.PresentationToModelIntents;
 import co.oriens.bluelight.presenter.TransparentActivity;
+import co.github.androidutils.logger.Logger;
 
 /**
  * Glue class: connects AlarmAlert IntentReceiver to AlarmAlert activity. Passes
@@ -106,7 +106,6 @@ public class AlarmAlertReceiver extends BroadcastReceiver {
         // Decide which activity to start based on the state of the
         // keyguard - is the screen locked or not.
         Class<? extends AlarmAlertFullScreen> c = AlarmAlert.class;
-
         KeyguardManager km = (KeyguardManager) mContext.getSystemService(Context.KEYGUARD_SERVICE);
         if (km.inKeyguardRestrictedInputMode()) {
             // Use the full screen activity to unlock the screen.
