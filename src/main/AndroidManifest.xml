@@ -213,12 +213,6 @@
             </intent-filter>
         </activity>
 
-        <!--Ana aktivite-->
-        <activity
-            android:name=".TabActivity"
-            android:label="@string/title_activity_tab"
-            android:theme="@style/AppTheme.NoActionBar" />
-
         <!--Uyanma anı için matematik işlemli tam ekran mavi ışık aktivitesi tanımlanıyor-->
         <activity
             android:name=".FullScreenWakeUp"
