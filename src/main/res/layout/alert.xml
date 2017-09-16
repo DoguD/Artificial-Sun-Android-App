@@ -20,6 +20,69 @@
     android:layout_height="match_parent"
     android:background="@color/cyanA200">
 
+    //INTRO text
+    <TextView
+        android:id="@+id/textAlarmFullScreenIntro"
+        android:text="@string/full_screen_alarm_intro"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="40sp" />
+
+    // End ringtone, start alarm game
+    <Button
+        android:id = "@+id/buttonStopAlarm"
+        android:layout_width = "wrap_content"
+        android:layout_height = "wrap_content"
+
+        android:layout_below="@id/textAlarmFullScreenIntro"
+        android:layout_marginTop="40dp"
+        android:padding="16dp"
+        android:layout_centerHorizontal = "true"
+
+        android:text="STOP ALARM"
+        android:textColor="@color/white"
+        android:background="@color/colorAccent"
+        />
+
+    // Initialy invisible timer
+    <TextView
+        android:id="@+id/textAlarmTimer"
+        android:layout_width = "wrap_content"
+        android:layout_height = "wrap_content"
+
+        android:layout_alignParentTop = "true"
+        android:layout_centerHorizontal = "true"
+        android:layout_margin="16dp"
+
+        android:text = "60 seconds left"
+        android:textSize="32dp"
+        android:textColor = "@color/black"
+
+        android:visibility="invisible"/>
+
+    // The square for the game
+    <Button
+        android:id="@+id/buttonSquare"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/white"
+
+        android:layout_marginTop="0dp"
+        android:layout_marginLeft="0dp"
+
+        android:visibility="invisible"/>
+
     <co.oriens.bluelight.view.DigitalClock
         android:id="@+id/alert_digital_clock"
         android:layout_width="match_parent"
@@ -28,7 +91,8 @@
         android:baselineAligned="true"
         android:gravity="center_horizontal"
         android:paddingBottom="60dp"
-        android:paddingTop="56dip" >
+        android:paddingTop="56dip"
+        android:visibility="gone">
 
         <co.oriens.bluelight.view.AndroidClockTextView
             android:id="@+id/digital_clock_time"
@@ -36,7 +100,8 @@
             android:layout_height="wrap_content"
             android:singleLine="true"
             android:textSize="90sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:visibility="gone" />
 
         <co.oriens.bluelight.view.AndroidClockTextView
             android:id="@+id/digital_clock_am_pm"
@@ -45,7 +110,8 @@
             android:layout_alignBottom="@+id/digital_clock_time"
             useClockTypeface="false"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:visibility="gone"/>
     </co.oriens.bluelight.view.DigitalClock>
 
     <Button
@@ -60,7 +126,8 @@
         android:text="@string/alarm_alert_snooze_text"
         android:textSize="20sp"
 
-        android:textColor="@color/black"/>
+        android:textColor="@color/black"
+        android:visibility="gone"/>
 
     <View
         android:id="@+id/alert_button_divider"
@@ -69,7 +136,8 @@
         android:layout_below="@id/alert_button_snooze"
         android:layout_marginLeft="16dip"
         android:layout_marginRight="16dip"
-        android:background="?android:attr/dividerHorizontal" />
+        android:background="?android:attr/dividerHorizontal"
+        android:visibility="gone"/>
 
     <Button
         android:id="@+id/alert_button_dismiss"
@@ -81,7 +149,8 @@
         android:text="@string/alarm_alert_dismiss_text"
         android:textSize="20sp"
 
-        android:textColor="@color/black"/>
+        android:textColor="@color/black"
+        android:visibility="gone"/>
 
      <TextView
             android:id="@+id/alarm_alert_label"
@@ -90,7 +159,8 @@
             android:gravity="top|center_horizontal"
             android:paddingTop="8dip"
             android:paddingBottom="8dip"
-            android:textSize="18sp"/>
+            android:textSize="18sp"
+         android:visibility="gone"/>
 
         <View
             android:id="@+id/alert_label_divider"
@@ -99,6 +169,7 @@
             android:layout_marginLeft="16dip"
             android:layout_marginRight="16dip"
             android:layout_below="@id/alarm_alert_label"
-            android:background="?android:attr/dividerHorizontal" />
+            android:background="?android:attr/dividerHorizontal"
+            android:visibility="gone"/>
 
 </RelativeLayout>
