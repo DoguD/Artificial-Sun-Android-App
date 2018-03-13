@@ -32,7 +32,6 @@
             android:taskAffinity="">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
             </intent-filter>
         </activity>
 
@@ -200,26 +199,20 @@
             </intent-filter>
         </service>
 
-        <!--Giriş Aktivitesi (Kullanıcı uygulamayı ilk açtığında onu bilgilendiren slaytlar)
-        tanımlanıyor-->
+        <!--
+        Giriş Aktivitesi (Kullanıcı uygulamayı ilk açtığında onu bilgilendiren slaytlar)
+        tanımlanıyor
+        -->
 
-        <activity android:name=".WelcomeActivity"
-            android:theme="@style/AppTheme"
-            android:supportsRtl="true">
+        <activity
+            android:name=".WelcomeActivity"
+            android:supportsRtl="true"
+            android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <!--Uyanma anı için matematik işlemli tam ekran mavi ışık aktivitesi tanımlanıyor-->
-
-        <!--25 dakikalık mavi ışık ile çalışma kativitesi tanımlanıyor-->
-
-        <!--Alarm servisi ve alıcısı tanımlanıyor-->
-
-        <!--Alarm vakti geldiğinde açılan tam ekran aktivite tanımlanıyor-->
     </application>
-
 </manifest>

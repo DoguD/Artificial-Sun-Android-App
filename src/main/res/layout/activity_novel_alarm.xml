@@ -1,0 +1,72 @@
+<RelativeLayout
+    android:id="@+id/alarmFullScreenLayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="co.oriens.bluelight.AlarmFullScreenActivity"
+    android:background="@color/cyanA200">
+
+    //INTRO text
+    <TextView
+        android:id="@+id/textAlarmFullScreenIntro"
+        android:text="@string/full_screen_alarm_intro"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="40sp" />
+
+    // End ringtone, start alarm game
+    <Button
+        android:id = "@+id/buttonStopAlarm"
+        android:layout_width = "wrap_content"
+        android:layout_height = "wrap_content"
+
+        android:layout_below="@id/textAlarmFullScreenIntro"
+        android:layout_marginTop="40dp"
+        android:padding="16dp"
+        android:layout_centerHorizontal = "true"
+
+        android:text="STOP ALARM"
+        android:textColor="@color/white"
+        android:background="@color/colorAccent"
+        />
+
+    // Initialy invisible timer
+    <TextView
+        android:id="@+id/textAlarmTimer"
+        android:layout_width = "wrap_content"
+        android:layout_height = "wrap_content"
+
+        android:layout_alignParentTop = "true"
+        android:layout_centerHorizontal = "true"
+        android:layout_margin="16dp"
+
+        android:text = "60 seconds left"
+        android:textSize="32dp"
+        android:textColor = "@color/black_overlay"
+
+        android:visibility="invisible"/>
+
+    // The square for the game
+    <Button
+        android:id="@+id/buttonSquare"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/white"
+
+        android:layout_marginTop="0dp"
+        android:layout_marginLeft="0dp"
+
+        android:visibility="invisible"/>
+</RelativeLayout>
